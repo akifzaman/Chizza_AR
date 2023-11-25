@@ -12,14 +12,14 @@ public class OrientationManager : MonoBehaviour
         if(Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-    void Update()
-    {
-        currentOrientation = Input.deviceOrientation;
-        if (previousOrientation != currentOrientation)
-        {
-            Debug.Log("Hello");
-            OnOrientationChanged?.Invoke();
-        }
-        previousOrientation = currentOrientation;
-    }
+    //void Update()
+    //{
+    //    currentOrientation = Input.deviceOrientation;
+    //    if (previousOrientation != currentOrientation)
+    //    {
+    //        Debug.Log("Hello");
+    //        OnOrientationChanged?.Invoke();
+    //    }
+    //    previousOrientation = currentOrientation;
+    //}
 }
