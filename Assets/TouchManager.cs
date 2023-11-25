@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
+using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.EventSystems;
-
 public class TouchManager : MonoBehaviour
 {
     public static TouchManager instance;
     public GameObject currentGameObject;
+
+    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     #region Singleton
     private void Awake()
@@ -20,6 +23,18 @@ public class TouchManager : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnEnable()
+    {
+        EnhancedTouch.TouchSimulation.Enable();
+        EnhancedTouch.EnhancedTouchSupport.Enable();
+    }
+    private void OnDisable()
+    {
+        EnhancedTouch.TouchSimulation.Disable();
+        EnhancedTouch.EnhancedTouchSupport.Disable();
+    }
+
     private void Update()
     {
         if (Input.touchCount > 0 && Input.touchCount < 2)// && !IsPointerOverUIElement(Input.GetTouch(0).position))
@@ -42,7 +57,7 @@ public class TouchManager : MonoBehaviour
                 currentGameObject.GetComponent<IngredientMovementController>().MoveItem(Input.GetTouch(0));
             }
         }
-        else if(Input.touchCount <= 0 && currentGameObject != null)
+        else if (Input.touchCount <= 0 && currentGameObject != null)
         {
             currentGameObject.GetComponent<IngredientMovementController>().ResetParent();
             currentGameObject = null;

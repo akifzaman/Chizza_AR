@@ -1,8 +1,7 @@
 using DG.Tweening;
-using System.Collections;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class BoxController : MonoBehaviour
 {
     public float rotationSpeed = 10.0f;
     public bool isAllowedToRotate;
@@ -28,7 +27,7 @@ public class ItemController : MonoBehaviour
         transform.DORotate(new Vector3(0f, -90f, 0f), 2.5f)
             .OnComplete(() => {
                 isAllowedToRotate = false;
-                OrientationManager.Instance.OnOrientationChanged?.Invoke();
+                GameManager.Instance.OnBoxScaledUp?.Invoke();
             });
     }
 }
