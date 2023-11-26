@@ -6,6 +6,7 @@ public class IngredientGroupController : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.OnBoxScaledUp.AddListener(ModifyIngredientGroupPositionAndScale);
+        GameManager.Instance.OnGameOver.AddListener(() => gameObject.SetActive(false));
     }
     private void Update()
     {

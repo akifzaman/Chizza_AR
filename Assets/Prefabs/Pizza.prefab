@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1424343361427986819}
   - component: {fileID: 5102715982253697178}
   - component: {fileID: 3909293225168051187}
-  - component: {fileID: 2091909413126355909}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Untagged
@@ -29,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: -0, y: 0, z: 1}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,20 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2091909413126355909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095155051750485082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76abc02ce58cd8a469c4f2b39cdbd132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  rotationSpeed: 10
-  val: 0
-  isAllowedToRotate: 0
-  ingredient: {fileID: 804361080558110615, guid: e3dcf2cebc9dd3e48a5aa8eea917fe3d, type: 3}

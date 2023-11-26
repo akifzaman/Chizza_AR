@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     public Image StartButton;
     public Transform ScanPanel;
     public TextMeshProUGUI MeatText, BreadText, CheeseText;
+    public GameObject Pizza, ParticleObject, ConfettiParticles;
+    public Vector3 SpawnPosition;
     public void Awake()
     {
         if(Instance == null) Instance = this;
@@ -62,5 +64,15 @@ public class UIManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+    [ContextMenu("GameOver")]
+    public void OnGameOver()
+    {
+        ParticleObject.transform.position = SpawnPosition;
+        ParticleObject.SetActive(true);
+        ConfettiParticles.transform.position = SpawnPosition;
+        ConfettiParticles.SetActive(true);
+        Pizza.transform.position = SpawnPosition;
+        Pizza.transform.DOScale(0.15f, 1f);
     }
 }

@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnBoxScaledUp;
     public UnityEvent OnIngredientDroppedOnBox;
     public UnityEvent OnScoreUpdated;
+    public UnityEvent OnGameOver;
     public GameObject CurrentIngredient;
     public Transform RayImage;
     public ARTrackedImageManager XROrigin;
-    public int score;
+    public int score, tryCount;
     public void Awake()
     {   
         if(Instance == null) Instance = this;
@@ -31,6 +32,12 @@ public class GameManager : MonoBehaviour
     }
     public void UpdateScore(string IngredientName)
     {
+        tryCount--;
+        if (tryCount <= 0)
+        {
+            OnGameOver?.Invoke();
+            UIManager.Instance.OnGameOver();
+        }
         Debug.Log(CurrentIngredient.name +"  "+ CurrentIngredient.name.ToString());
         if (UIManager.Instance.ChangeTextColor(CurrentIngredient.name.ToString()))
         {

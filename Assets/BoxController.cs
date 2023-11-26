@@ -8,9 +8,11 @@ public class BoxController : MonoBehaviour
     public bool isAllowedToRotate;
     public GameObject ingredient;
     public Transform PizzaBox;
+
     void Start()
     {
         UIManager.Instance.DisableScanPanel();
+        GameManager.Instance.OnGameOver.AddListener(() => gameObject.SetActive(false));
         GameManager.Instance.OnScoreUpdated.AddListener(ShakeBox);
         isAllowedToRotate = true;
         RotateObject();
@@ -19,10 +21,8 @@ public class BoxController : MonoBehaviour
 
     private void Update()
     {
-        if (!isAllowedToRotate)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));    
-        }
+        if(gameObject.activeInHierarchy) UIManager.Instance.SpawnPosition = transform.position;
+        if (!isAllowedToRotate) transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));           
     }
 
     private void RotateObject()
