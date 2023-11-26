@@ -24,7 +24,7 @@ public class BoxController : MonoBehaviour
 
     private void RotateObject()
     {
-        transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 2f);
+        transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 1.5f);
         transform.DORotate(new Vector3(0f, -90f, 0f), 2.5f)
         .OnComplete(() => {
             isAllowedToRotate = false;
