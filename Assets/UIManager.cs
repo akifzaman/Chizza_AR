@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public Image ChickenImage;
     public Image PizzaNameImage;
     public Image PizzaFrameImage;
-    public Image StartButton;
+    public Image StartButton, RetryButton;
     public Transform ScanPanel;
     public Transform HintsPanel;
     public TextMeshProUGUI MeatText, BreadText, CheeseText, ScoreText;
@@ -85,5 +85,6 @@ public class UIManager : MonoBehaviour
     {
         ScoreText.text = $"Score: {GameManager.Instance.score}";
         ScoreText.transform.DOScale(1.0f, 1.0f);
+        RetryButton.transform.DOScale(1.0f, 1.0f);
     }
 }

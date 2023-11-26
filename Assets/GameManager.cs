@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 
 public class GameManager : MonoBehaviour
@@ -27,6 +28,10 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         RayImage.RotateAround(RayImage.position, Vector3.forward * Time.deltaTime, -0.3f);
+    }
+    public void OnRetry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void UpdateScore(string IngredientName)
     {
