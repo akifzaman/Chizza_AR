@@ -1,7 +1,9 @@
 using DG.Tweening;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -12,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Image PizzaFrameImage;
     public Image StartButton;
     public Transform ScanPanel;
+    public TextMeshProUGUI MeatText, BreadText, CheeseText;
     public void Awake()
     {
         if(Instance == null) Instance = this;
@@ -33,8 +36,31 @@ public class UIManager : MonoBehaviour
             onComplete?.Invoke();
         });
     }
+    public void UpdateScoreUI(int value)
+    {
+        Debug.Log(value);
+    }
     public void DisableScanPanel()
     {
         ScanPanel.gameObject.SetActive(false);
+    }
+    public bool ChangeTextColor(string textName)
+    {
+        if (textName == "Meat")
+        {
+            MeatText.color = Color.black;
+            return true;
+        }
+        else if (textName == "Bread")
+        {
+            BreadText.color = Color.black;
+            return true;
+        }
+        else if (textName == "Cheese")
+        {
+            CheeseText.color = Color.black;
+            return true;
+        }
+        return false;
     }
 }

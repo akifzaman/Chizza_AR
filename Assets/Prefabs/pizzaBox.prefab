@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 1035562022180154949}
   - component: {fileID: 5320023727367205332}
   m_Layer: 0
-  m_Name: Bread2
+  m_Name: Bread
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7743494812436039885}
   - component: {fileID: 840916288673012184}
   m_Layer: 0
-  m_Name: Cheese2
+  m_Name: Cheese
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,6 +519,7 @@ MonoBehaviour:
   rotationSpeed: 10
   isAllowedToRotate: 0
   ingredient: {fileID: 804361080558110615, guid: e3dcf2cebc9dd3e48a5aa8eea917fe3d, type: 3}
+  PizzaBox: {fileID: 0}
 --- !u!1 &5642067824325031297
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +566,7 @@ GameObject:
   - component: {fileID: 5781552096825237074}
   - component: {fileID: 5073634000196584352}
   m_Layer: 0
-  m_Name: Bottle2
+  m_Name: Bottle
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -957,7 +958,7 @@ GameObject:
   - component: {fileID: 547977917369499309}
   - component: {fileID: 4122194718035876774}
   m_Layer: 0
-  m_Name: Meat1
+  m_Name: Meat
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

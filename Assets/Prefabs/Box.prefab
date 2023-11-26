@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 3977445061448690304}
   - component: {fileID: 7873500368623196453}
   m_Layer: 0
-  m_Name: Bread2
+  m_Name: Bread
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 2369662477451347457}
   - component: {fileID: 8590811550760609317}
   m_Layer: 0
-  m_Name: Cheese2
+  m_Name: Cheese
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 5544229076336272937}
   - component: {fileID: 2320935377104686528}
   m_Layer: 0
-  m_Name: Meat1
+  m_Name: Meat
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
