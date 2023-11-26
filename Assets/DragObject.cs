@@ -34,7 +34,6 @@ public class DragObject : MonoBehaviour
             }
             else if (dragging && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                Debug.Log("akif: " + GameManager.Instance.CurrentIngredient.name);
                 if (gameObject != GameManager.Instance.CurrentIngredient) return;
                 transform.SetParent(null);
                 v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
@@ -74,14 +73,11 @@ public class DragObject : MonoBehaviour
         //transform.position = ParentTransform.position;
         //transform.SetParent(ParentTransform);
 
-        //transform.DOMove(ParentTransform.position, 1f);
-        //transform.SetParent(ParentTransform);
-
         transform.DOMove(ParentTransform.position, 1f).
-            OnComplete(() =>
-            {
-                transform.SetParent(ParentTransform);
-            });
+        OnComplete(() =>
+        {
+            transform.SetParent(ParentTransform);
+        });
     }
 
     // Helper function to check if a UI element is at a specific position

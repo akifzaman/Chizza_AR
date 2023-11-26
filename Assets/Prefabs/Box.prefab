@@ -143,7 +143,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.18280438, y: 3.1573772, z: 0.18280432}
   m_Center: {x: 0.0009955119, y: 0.09952231, z: 0.00016958559}
@@ -322,7 +322,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.2384916, y: 5.837065, z: 0.1345073}
   m_Center: {x: -0.0009068506, y: 0.05296803, z: -0.0009637666}
@@ -469,7 +469,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.2621167, y: 4.802539, z: 0.26481202}
   m_Center: {x: 0.00001595185, y: 0.1453188, z: -0.00000012167081}
@@ -616,7 +616,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.11555006, y: 2.2285492, z: 0.10973543}
   m_Center: {x: 0.000039255836, y: 0.12799008, z: -0.00014719088}
@@ -827,7 +827,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.101089895, y: 1.9326257, z: 0.119000874}
   m_Center: {x: -0.000021564392, y: 0.029246878, z: 0.0018277168}
@@ -842,6 +842,7 @@ GameObject:
   - component: {fileID: 3242266609224859082}
   - component: {fileID: 8859249285687456584}
   - component: {fileID: 2336859081389195870}
+  - component: {fileID: 8982620684105831163}
   m_Layer: 0
   m_Name: pizzaBox
   m_TagString: Untagged
@@ -915,6 +916,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8982620684105831163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364982139180150393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
 --- !u!1 &6611829834125558060
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +958,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3242266609224859082}
@@ -1130,7 +1145,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.27678484, y: 3.878436, z: 0.28616485}
   m_Center: {x: -0.0034309227, y: 0.033851687, z: -0.027861673}
