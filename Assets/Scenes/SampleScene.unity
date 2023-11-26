@@ -255,6 +255,7 @@ MonoBehaviour:
       m_Calls: []
   CurrentIngredient: {fileID: 0}
   RayImage: {fileID: 591642039}
+  XROrigin: {fileID: 2006194104}
 --- !u!4 &225009700
 Transform:
   m_ObjectHideFlags: 0
@@ -303,6 +304,7 @@ MonoBehaviour:
   PizzaNameImage: {fileID: 1103951729}
   PizzaFrameImage: {fileID: 942914259}
   StartButton: {fileID: 2014814211}
+  ScanPanel: {fileID: 629993832}
 --- !u!4 &228486551
 Transform:
   m_ObjectHideFlags: 0
@@ -2159,6 +2161,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 225009699}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EnableARTracking
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

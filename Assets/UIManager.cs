@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Image PizzaNameImage;
     public Image PizzaFrameImage;
     public Image StartButton;
+    public Transform ScanPanel;
     public void Awake()
     {
         if(Instance == null) Instance = this;
@@ -31,5 +32,9 @@ public class UIManager : MonoBehaviour
         {
             onComplete?.Invoke();
         });
+    }
+    public void DisableScanPanel()
+    {
+        ScanPanel.gameObject.SetActive(false);
     }
 }

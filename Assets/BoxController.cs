@@ -10,6 +10,7 @@ public class BoxController : MonoBehaviour
     public Transform PizzaBox;
     void Start()
     {
+        UIManager.Instance.DisableScanPanel();
         GameManager.Instance.OnScoreUpdated.AddListener(ShakeBox);
         isAllowedToRotate = true;
         RotateObject();

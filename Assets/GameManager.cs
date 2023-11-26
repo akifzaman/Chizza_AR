@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.ARFoundation;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnScoreUpdated;
     public GameObject CurrentIngredient;
     public Transform RayImage;
+    public ARTrackedImageManager XROrigin;
     public void Awake()
     {   
         if(Instance == null) Instance = this;
@@ -29,5 +31,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Scored");
         OnScoreUpdated?.Invoke();
+    }
+    public void EnableARTracking()
+    {
+        XROrigin.enabled = true;
     }
 }
