@@ -32,6 +32,10 @@ public class BoxController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided");
+        if(other.CompareTag("Ingredient")) GameManager.Instance.isBoxTriggered = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Ingredient")) GameManager.Instance.isBoxTriggered = false;
     }
 }

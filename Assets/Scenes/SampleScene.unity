@@ -152,7 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3f6c8f0775bcc45ba9568a094b097d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoxTriggered: 0
   OnBoxScaledUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIngredientDroppedOnBox:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &225009700

@@ -41,7 +41,13 @@ public class DragObject : MonoBehaviour
             else if (dragging && (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled))
             {
                 dragging = false;
-                ResetParent();
+                if (GameManager.Instance.isBoxTriggered)
+                {
+                    GameManager.Instance.OnIngredientDroppedOnBox?.Invoke();
+                    GameManager.Instance.isBoxTriggered = false;
+                    Destroy(gameObject);
+                }
+                else ResetParent();
             }
         }  
     }
