@@ -70,14 +70,14 @@ public class DragObject : MonoBehaviour
 
     public void ResetParent()
     {
-        //transform.position = ParentTransform.position;
-        //transform.SetParent(ParentTransform);
+        transform.position = ParentTransform.position;
+        transform.SetParent(ParentTransform);
 
-        transform.DOMove(ParentTransform.position, 1f).
-        OnComplete(() =>
-        {
-            transform.SetParent(ParentTransform);
-        });
+        //transform.DOMove(ParentTransform.position, 1f).
+        //OnComplete(() =>
+        //{
+        //    transform.SetParent(ParentTransform);
+        //});
     }
 
     // Helper function to check if a UI element is at a specific position

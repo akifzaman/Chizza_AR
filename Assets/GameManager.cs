@@ -1,7 +1,5 @@
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR.ARFoundation;
 
 public class GameManager : MonoBehaviour
@@ -33,17 +31,15 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(string IngredientName)
     {
         tryCount--;
-        if (tryCount <= 0)
-        {
-            OnGameOver?.Invoke();
-            UIManager.Instance.OnGameOver();
-        }
-        Debug.Log(CurrentIngredient.name +"  "+ CurrentIngredient.name.ToString());
         if (UIManager.Instance.ChangeTextColor(CurrentIngredient.name.ToString()))
         {
             score += 10;
             UIManager.Instance.UpdateScoreUI(score);
-            Debug.Log("Score: " + score);
+        }
+        if (tryCount <= 0)
+        {
+            OnGameOver?.Invoke();
+            UIManager.Instance.OnGameOver();
         }
         OnScoreUpdated?.Invoke();
     }

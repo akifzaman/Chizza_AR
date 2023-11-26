@@ -1,9 +1,7 @@
 using DG.Tweening;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -14,7 +12,8 @@ public class UIManager : MonoBehaviour
     public Image PizzaFrameImage;
     public Image StartButton;
     public Transform ScanPanel;
-    public TextMeshProUGUI MeatText, BreadText, CheeseText;
+    public Transform HintsPanel;
+    public TextMeshProUGUI MeatText, BreadText, CheeseText, ScoreText;
     public GameObject Pizza, ParticleObject, ConfettiParticles;
     public Vector3 SpawnPosition;
     public void Awake()
@@ -45,6 +44,11 @@ public class UIManager : MonoBehaviour
     public void DisableScanPanel()
     {
         ScanPanel.gameObject.SetActive(false);
+        EnableHintsPanel();
+    }
+    public void EnableHintsPanel()
+    {
+        HintsPanel.gameObject.SetActive(true);
     }
     public bool ChangeTextColor(string textName)
     {
@@ -68,11 +72,18 @@ public class UIManager : MonoBehaviour
     [ContextMenu("GameOver")]
     public void OnGameOver()
     {
+        SetScoreText();
+        HintsPanel.gameObject.SetActive(false);
         ParticleObject.transform.position = SpawnPosition;
         ParticleObject.SetActive(true);
         ConfettiParticles.transform.position = SpawnPosition;
         ConfettiParticles.SetActive(true);
         Pizza.transform.position = SpawnPosition;
         Pizza.transform.DOScale(0.15f, 1f);
+    }
+    public void SetScoreText()
+    {
+        ScoreText.text = $"Score: {GameManager.Instance.score}";
+        ScoreText.transform.DOScale(1.0f, 1.0f);
     }
 }
