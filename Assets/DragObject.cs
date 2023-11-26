@@ -33,6 +33,8 @@ public class DragObject : MonoBehaviour
             }
             else if (dragging && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
+                GameManager.Instance.CurrentIngredient = gameObject;
+                Debug.Log("akif: "+GameManager.Instance.CurrentIngredient.name);
                 transform.SetParent(null);
                 v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
                 v3 = Camera.main.ScreenToWorldPoint(v3);
@@ -45,7 +47,7 @@ public class DragObject : MonoBehaviour
                 {
                     GameManager.Instance.OnIngredientDroppedOnBox?.Invoke();
                     GameManager.Instance.isBoxTriggered = false;
-                    Destroy(gameObject);
+                    Destroy(GameManager.Instance.CurrentIngredient);
                 }
                 else ResetParent();
             }

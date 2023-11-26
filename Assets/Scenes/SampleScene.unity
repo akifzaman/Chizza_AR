@@ -159,6 +159,9 @@ MonoBehaviour:
   OnIngredientDroppedOnBox:
     m_PersistentCalls:
       m_Calls: []
+  OnScoreUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &225009700
 Transform:
   m_ObjectHideFlags: 0

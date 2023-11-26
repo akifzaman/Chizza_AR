@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public bool isBoxTriggered;
     public UnityEvent OnBoxScaledUp;
     public UnityEvent OnIngredientDroppedOnBox;
+    public UnityEvent OnScoreUpdated;
+    public GameObject CurrentIngredient;
     public void Awake()
     {   
         if(Instance == null) Instance = this;
@@ -20,5 +22,6 @@ public class GameManager : MonoBehaviour
     public void UpdateScore()
     {
         Debug.Log("Scored");
+        OnScoreUpdated?.Invoke();
     }
 }
