@@ -30,4 +30,8 @@ public class BoxController : MonoBehaviour
                 GameManager.Instance.OnBoxScaledUp?.Invoke();
             });
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collided");
+    }
 }
