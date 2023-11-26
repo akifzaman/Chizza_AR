@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnIngredientDroppedOnBox;
     public UnityEvent OnScoreUpdated;
     public GameObject CurrentIngredient;
+    public Transform RayImage;
     public void Awake()
     {   
         if(Instance == null) Instance = this;
@@ -18,6 +20,10 @@ public class GameManager : MonoBehaviour
     {
         isBoxTriggered = false;
         OnIngredientDroppedOnBox.AddListener(UpdateScore);
+    }
+    public void Update()
+    {
+        RayImage.RotateAround(RayImage.position, Vector3.forward * Time.deltaTime, -0.3f);
     }
     public void UpdateScore()
     {
