@@ -7,7 +7,6 @@ public class DragObject : MonoBehaviour
 {
     private bool dragging;
     private float dist;
-    private Vector3 v3;
     private Vector3 offset;
     private Transform toDrag;
     public Transform ParentTransform;
@@ -16,29 +15,26 @@ public class DragObject : MonoBehaviour
     {
         if (Input.touchCount > 0 && Input.touchCount < 2)
         {
-            Vector3 pos = Input.GetTouch(0).position;
+            Vector3 touchPosition = Input.GetTouch(0).position;
 
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                toDrag = GetIngredientAtTouchPosition(pos);
+                toDrag = GetIngredientAtTouchPosition(touchPosition);
 
                 if (toDrag != null)
                 {
                     GameManager.Instance.CurrentIngredient = toDrag.gameObject;
                     dist = toDrag.position.z - Camera.main.transform.position.z;
-                    v3 = new Vector3(pos.x, pos.y, dist);
-                    v3 = Camera.main.ScreenToWorldPoint(v3);
-                    offset = toDrag.position - v3;
+                    offset = toDrag.position - Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, dist));
                     dragging = true;
                 }
             }
             else if (dragging && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 if (gameObject != GameManager.Instance.CurrentIngredient) return;
-                transform.SetParent(null);
-                v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
-                v3 = Camera.main.ScreenToWorldPoint(v3);
-                toDrag.position = v3 + offset;
+
+                Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, dist)) + offset;
+                toDrag.position = Vector3.Lerp(toDrag.position, newPosition, Time.deltaTime * 10f); // Adjust the speed as needed
             }
             else if (dragging && (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled))
             {
@@ -70,14 +66,8 @@ public class DragObject : MonoBehaviour
 
     public void ResetParent()
     {
-        transform.position = ParentTransform.position;
+        transform.position = ParentTransform.position;// Vector3.Lerp(transform.position, ParentTransform.position, Time.deltaTime * 10f); // Adjust the speed as needed
         transform.SetParent(ParentTransform);
-
-        //transform.DOMove(ParentTransform.position, 1f).
-        //OnComplete(() =>
-        //{
-        //    transform.SetParent(ParentTransform);
-        //});
     }
 
     // Helper function to check if a UI element is at a specific position

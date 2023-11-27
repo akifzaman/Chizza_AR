@@ -15,7 +15,7 @@ public class IngredientGroupController : MonoBehaviour
     private void ModifyIngredientGroupPositionAndScale()
     {
         transform.Translate(new Vector3(-0.1f, 0.3f, 0) * Time.deltaTime);
-        transform.DOScale(new Vector3(1f, 1f, 1f), 1f).
+        transform.DOScale(new Vector3(0.007f, 0.007f, 0.007f), 1f).
         OnComplete(() =>
         {
             foreach (Transform item in transform)
